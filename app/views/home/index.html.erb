@@ -1,0 +1,19 @@
+<h1>Welcome to the Host Application</h1>
+
+<h2>Paid Payments<h2>
+
+<ul>
+	<%- @paid_payments.each do |payment| %>
+		<li><%= payment['amount'] %></li>
+	<% end %>
+
+</ul>
+
+<h2>UnPaid Payments<h2>
+
+<ul>
+	<%- @unpaid_payments.each do |payment| %>
+		<li><%= payment['amount'] %></li>
+	<% end %>
+
+</ul>
