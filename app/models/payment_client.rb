@@ -14,7 +14,7 @@ class PaymentClient
     response = nil
     message = { id: SecureRandom.hex, jsonrpc: '2.0', method: 'find_payments', params: [user_id, state]  }
 
-    exchange.publish(JSON.generate(message), { corrleation_id: message['id'], reply_to: reply_queue.name,
+    exchange.publish(JSON.generate(message), { correlation_id: message['id'], reply_to: reply_queue.name,
     routing_key: server_queue.name } )
 
     # subscribe to return queue. blocks interpreter to wait for response
